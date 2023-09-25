@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of California Santa Barbara CSU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="psi-header">
+    <nav>
+        <a href="index.html"><img src="images/thumb.jpg"></a>
+        <div class="nav-links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="staff.html">STAFF</a></li>
+                <li><a href="media.html">MEDIA</a></li>
+                <li><a href="about.html">MEMBERSHIP</a></li>
+                <li><a href="calendar.html">CALENDAR</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+
+<!-- Section Pictures -->
+<section class="media">
+    <h2>2022</h2>
+    <div class="media-container">
+        <div class="media-slide">
+            <img src="images/xp1.jpg">
+        </div>
+        <div class="media-slide">
+            <img src="images/xp2.jpg">
+        </div>
+        <div class="media-slide">
+            <img src="images/xp3.jpg">
+        </div>
+        <div class="media-slide">
+            <img src="images/biglittlepics1.JPG">
+        </div>
+        
+        <div class="media-slide">
+            <img src="images/biglittlepics3.png">
+        </div>
+        <!-- Add more media-slide elements for additional images -->
+    </div>
+    <div class="media-buttons">
+        <button class="prev" onclick="showSlide('prev')">&#8249;</button>
+        <button class="next" onclick="showSlide('next')">&#8250;</button>
+    </div>
+</section>
+
+<!-- JavaScript for Toggle Menu and Slideshow -->
+<script>
+    let currentSlide = 0; // Initialize the current slide index
+    const slides = document.querySelectorAll('.media-slide'); // Get all the slides
+
+    function showSlide(direction) {
+        // Hide all slides
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+
+        // Calculate the next slide index based on the direction
+        if (direction === 'prev') {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        } else {
+            currentSlide = (currentSlide + 1) % slides.length;
+        }
+
+        // Show the next slide
+        slides[currentSlide].style.display = 'block';
+    }
+
+    // Initially, display the first slide
+    showSlide('next');
+
+    // Automatic slideshow
+    function nextAutoSlide() {
+        showSlide('next'); // Use the same showSlide function for automatic transitions
+    }
+
+    function startAutoSlideshow() {
+        setInterval(nextAutoSlide, 3000); // Change slide every 3 seconds (adjust as needed)
+    }
+
+    // Start the automatic slideshow when the page is loaded
+    window.addEventListener('load', startAutoSlideshow);
+</script>
+
+
+</body>
+</html>

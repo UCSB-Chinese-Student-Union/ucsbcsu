@@ -1,0 +1,924 @@
+/*---Main Page----*/
+/*---Main Page----*/
+/*---Main Page----*/
+/*---Main Page----*/
+/*---Main Page----*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: center; /* Center the navigation horizontally */
+    align-items: center;
+    flex-direction: column; /* Center align vertically */
+}
+
+nav img {
+    width: 175px;
+    border-radius: 100%;
+    margin-bottom: 20px; /* Add spacing between the image and links */
+}
+
+.nav-links {
+    margin-top: 0px; /* Add spacing above the links */
+    text-align: center; /* Center-align the links */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center-align the links horizontally */
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: flex;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 3px;
+}
+
+.nav-links ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: white;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+/*--- Mobile Optimizations---*/
+
+/* Add a CSS media query for screens with a maximum width of 768px (typical for mobile devices) */
+.mobile-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 50px;
+}
+
+.mobile-menu-container {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Show/hide the mobile menu container */
+.mobile-menu.active + .mobile-menu-container {
+    display: block;
+}
+
+/* Media query for displaying the mobile menu button */
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none; /* Hide the desktop navigation links */
+    }
+
+    .mobile-menu-container ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu-container ul li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .mobile-menu-container ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .mobile-menu.active + .mobile-menu-container {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+    }
+}
+/*---Slide Show Gallery---*/
+/* Gallery section styles */
+
+.gallery {
+    text-align: center;
+    background-color: #FFDBDB;
+    padding: 20px;
+    position: relative;
+}
+
+.gallery h2 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: darkred;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Gallery container styles */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Gallery slide styles */
+.gallery-slide {
+    display: none;
+}
+
+.gallery-slide img {
+    max-width: 750px;
+    height: 500px;
+    border: 5px solid darkred;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Gallery buttons styles */
+.gallery-buttons {
+    margin-top: 10px;
+}
+
+.gallery-buttons button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-buttons button:hover {
+    background-color: #ccc; /* Change the background color on hover if needed */
+}
+
+/* Initially show the first slide */
+.gallery-slide:first-child {
+    display: block;
+}
+
+.gallery-buttons .prev,
+.gallery-buttons .next {
+    font-family: "FontAwesome"; /* Use FontAwesome for the arrow icons */
+}
+
+/* Text box styles */
+.text-box {
+    width: auto;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    background-color: #FFDBDB;
+    padding: 40px;
+    margin-top: 0px; /* Add some margin to push it down */
+    margin-left: auto;
+    border: 20px transparent; /* Set a transparent border for spacing */
+}
+
+.text-box h1 {
+    font-size: 62px;
+    color: #D00808;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.text-box p {
+    margin: 5px 0 35px;
+    font-size: 16px;
+    color: #D00808;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/*--- Button Box---*/
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: darkred;
+    border: 1px solid darkred;
+    padding: 15px 34px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.hero-btn:hover {
+    border: 1px solid purple;
+    background: solid purple;
+    transition: .5s;
+}
+
+
+
+/*---Main Page Timeline----*/
+
+.content-container {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    padding: 0px;
+    background-color: #D00808;
+    z-index: 2;
+}
+
+.image-container {
+    flex: 1; /* Make it take up 50% of the container */
+    padding: 0px;
+}
+
+.image-container img {
+    height: auto;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 10px transparent; /* Set a transparent border for spacing */
+    padding: 0px;
+    border-radius: 100%;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Exo 2', sans-serif;
+}
+
+p{
+    color: #777;
+    font: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; /* Stack content on smaller screens */
+        text-align: center;
+    }
+
+    .image-container,
+    .text-container {
+        flex: none; /* Reset flex properties for smaller screens */
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+}
+
+/*---- Links for Instagram, Venmo, Linktree---*/
+
+.ABOUT{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 1px;
+    background-color: #FFDBDB;
+    
+}
+
+
+
+.row{
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.course-col{
+    flex-basis: 10%;
+    background: #FFDBDB;
+    border-radius: 100%;
+    margin-bottom: 0%;
+    padding: 0px 0px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.course-col img{
+    width: 35px;
+    padding: 0px;
+    border: 2px solid transparent;
+    transition: red 0.5s ease;
+}
+
+.course-col{
+    list-style-type: none;
+    padding-left: 0;
+    border: grey;
+}
+
+.course-col:hover{
+    border-color: red;
+    transition: red 0.5s ease;
+}
+
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+
+/*--- Membership ---*/
+/*--- Membership ---*/
+/*--- Membership ---*/
+/*--- Membership ---*/
+/*--- Membership ---*/
+
+.sub-header{
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Button Styles */
+
+
+.button-hero {
+    display: inline-block;
+    text-decoration: none;
+    color: darkred;
+    border: 1px solid darkred;
+    padding: 15px 34px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Exo 2', sans-serif;
+    border-radius: 35px;
+}
+
+.button-hero:hover {
+    border: 1px solid purple;
+    background-color: skyblue;
+    transition: .5s;
+}
+
+.button-container {
+    text-align: left;
+    position: relative;
+}
+
+.button-container,
+.membership3-container{
+        display: flex;
+    flex-wrap: wrap; /* Allow staff members to wrap onto a new line if needed */
+    justify-content: center; /* Center-align items horizontally */
+    background-color: white;
+    padding: 20px;
+    max-width: auto;
+    margin: 10px auto 0 auto;
+    border-radius: 15px;
+    top: -10px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.membership2-container,
+.membership-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow staff members to wrap onto a new line if needed */
+    justify-content: flex-start; /* Center-align items horizontally */
+    background-color: white;
+    padding: 20px;
+    max-width: auto;
+    margin: 10px auto 0 auto;
+    border-radius: 15px;
+    top: -10px;
+    margin: auto;
+}
+
+
+.membership-box,
+.membership-box2{
+    position: relative;
+    text-align: left;
+    flex: 1;
+
+}
+
+.membership-box h1{
+    position: relative;
+    text-align: left;
+    color: darkred;
+    left: 455px;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.membership-box p{
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    color: darkred;
+    left: 455px;
+    font-family: 'Exo 2', sans-serif;    
+}
+
+.membership-hero{
+    display: inline-block;
+    text-decoration: none;
+    color: darkred;
+    border: 1px solid darkred;
+    padding: 15px 34px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Exo 2', sans-serif;
+    border-radius: 35px;
+        left: 455px;
+}
+
+.membership-hero:hover {
+    border: 1px solid purple;
+    background-color: skyblue;
+    transition: .5s;
+}
+
+
+.membership2-image img{
+    max-width: 300px;
+    right
+    margin-bottom: 25px;
+
+}
+
+
+.membership2-box h1{
+    position: relative;
+    text-align: left;
+    color: darkred;
+        left: 455px;
+}
+
+.membership2-box p{
+    position: relative;
+    text-align: left;
+    font-size: 20px;
+    color: darkred;
+    left: 455px;
+}
+
+.membership2-hero {
+    display: inline-block;
+    text-decoration: none;
+    color: darkred;
+    border: 1px solid darkred;
+    padding: 15px 34px;
+    font-size: 16px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Exo 2', sans-serif;
+    border-radius: 35px;
+        left: 455px;
+}
+
+.membership2-hero:hover {
+    border: 1px solid purple;
+    background-color: skyblue;
+    transition: .5s;
+}
+
+/*--- Staff ---*/
+/*--- Staff ---*/
+/*--- Staff ---*/
+/*--- Staff ---*/
+/*--- Staff ---*/
+/*--- Staff ---*/
+
+.beta-header{
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.staff-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow staff members to wrap onto a new line if needed */
+    justify-content: center; /* Center-align items horizontally */
+    background-color: #FCF5E5;
+    padding: 20px;
+    max-width: auto;
+    margin: 10px auto 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    top: -10px;
+    border-color: rosybrown;
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+    color: darkred;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.staff-container h2{
+    padding: 10px;
+    text-align: center;
+    margin: 0px;
+}
+
+/* Style individual staff members */
+.staff-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    margin: 50px;
+}
+
+.staff-member img {
+    width: 400px;
+    max-width: 400px; /* Set a max width for consistency */
+    height: 400px;
+    bottom: -10px;
+    border-radius: 20%;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/dragon.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 0;
+    border-style: solid;
+    transition: transform 0.3s ease;
+}
+
+.staff-member li {
+    list-style: none;
+    margin-top: 8px;
+}
+
+.staff-member li a{
+    margin-top: 12px;
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.staff-member li a{
+    margin-top: 14px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.staff-member li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: red;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.staff-member li a:hover::after {
+    width: 25%;
+}
+
+.staff-member p{
+    color: black;
+    margin-top: -9px;
+}
+
+/*---Mobile Menu for Staff ---*/
+/*---Mobile Menu for Staff ---*/
+/*---Mobile Menu for Staff ---*/
+/*---Mobile Menu for Staff ---*/
+
+.mobile2-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 50px;
+}
+
+.mobile-menu2-container {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Show/hide the mobile menu container */
+.mobile-menu2.active + .mobile-menu2-container {
+    display: block;
+}
+
+/* Media query for displaying the mobile menu button */
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none; /* Hide the desktop navigation links */
+    }
+
+    .mobile-menu2-container ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-menu2-container ul li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .mobile-menu2-container ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .mobile-menu2.active + .mobile-menu2-container {
+        display: block;
+        position: absolute;
+        top: 60px;
+        right: 0;
+    }
+}
+
+
+
+/*--- Events ---*/
+/*--- Events ---*/
+/*--- Events ---*/
+/*--- Events ---*/
+/*--- Events ---*/
+/*--- Events ---*/
+
+.delta-header{
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+
+/*--- FAQ ---*/
+/*--- FAQ ---*/
+/*--- FAQ ---*/
+/*--- FAQ ---*/
+/*--- FAQ ---*/
+/*--- FAQ ---*/
+.mu-header{
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, p, ul, li {
+    margin: 2;
+    padding: 2;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.text-container2 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Style links within paragraphs */
+a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Remove bullets for hyperlinks in the list */
+.text-container2 li {
+    list-style: none;
+    font-weight: bold;
+}
+
+.text-container2 li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+.text-container2 li a:hover {
+    text-decoration: underline;
+}
+
+/*--- Calender ---*/
+/*--- Calender ---*/
+/*--- Calender ---*/
+/*--- Calender ---*/
+/*--- Calender ---*/
+/*--- Calender ---*/
+/*--- Calender ---*/
+
+.nu-header{
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/*--- Media ---*/
+
+.psi-header{
+    height: 33vh;
+    width: auto;
+    background-color: darkred;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border: 20px transparent; /* Set a transparent border for spacing */
+    border-image-source: url(images/border.png);
+    border-image-width: 0px;
+    border-image-slice: 1 fill;
+    border-image-outset: 1.0;
+    border-style: solid;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.media {
+    text-align: center;
+    background-color: #FFDBDB;
+    padding: 20px;
+    position: relative;
+}
+
+.media h2 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    color: darkred;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Gallery container styles */
+.media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Gallery slide styles */
+.media-slide {
+    display: none;
+}
+
+.media-slide img {
+    max-width: 750px;
+    height: 500px;
+    border: 5px solid darkred;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Gallery buttons styles */
+.media-buttons {
+    margin-top: 10px;
+}
+
+.media-buttons button {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.media-buttons button:hover {
+    background-color: #ccc; /* Change the background color on hover if needed */
+}
+
+/* Initially show the first slide */
+.media-slide:first-child {
+    display: block;
+}
+
+.media-buttons .prev,
+.media-buttons .next {
+    font-family: "FontAwesome"; /* Use FontAwesome for the arrow icons */
+}
