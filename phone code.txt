@@ -1,3 +1,39 @@
+
+nav .fa{
+    display: none;
+    
+}
+
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 50px;}
+    }
+.nav-links ul li{
+    display: block;     
+}
+.nav-links{
+    position: absolute;
+    background: #f44336;
+    height: 200vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: .5s;
+    }
+nav .fa{
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.nav-links ul{
+    padding: 30px;
+}
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,19 +78,13 @@
         <h2>Chinese Student Union</h2>
         <div class="gallery-container">
             <div class="gallery-slide">
-                <img src="images/biglittlepics1.JPG">
+                <img src="images/biglittlepics1.JPG" alt="Image 1">
             </div>
             <div class="gallery-slide">
-                <img src="images/biglittlepics3.png">
+                <img src="images/biglittlepics3.png" alt="Image 2">
             </div>
             <div class="gallery-slide">
-                <img src="images/uno.jpg">
-            </div>
-            <div class="gallery-slide">
-                <img src="images/dos.jpg">
-            </div>
-            <div class="gallery-slide">
-                <img src="images/tres.jpg">
+                <img src="images/bobby.png" alt="Image 3">
             </div>
         </div>
         <div class="gallery-buttons">
